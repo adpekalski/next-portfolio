@@ -1,0 +1,81 @@
+
+.about {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.about-container {
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: space-between;
+
+/* gap: 24px; */
+
+    /* height: 600px;
+    width: var(--card-size); */
+
+    /* !!! this one is most important to be responsive one */
+    /* height: fit-content; */
+    /* !!! change to less in case of bigger devices (lets say 70) */
+    /* and make card margin bigger and  */
+    height: 90%;
+    width: 90%;
+
+    /* margin-top: 20px; */
+
+    /* margin-bottom: 20px; */
+
+    /* background-color: var(--white); */
+
+    /* border-radius: 15%; */
+
+    
+}
+
+.about-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: calc(var(--card-margin) * 2); */
+    /* margin: 24px; */
+
+    /* height: 100%; */
+}
+
+.about-center>*{
+    margin: var(--card-margin);
+}
+
+.about-center a {
+
+    text-decoration: none;
+
+}
+
+.about-center h1,p {
+    /* margin: 0; */
+}
+
+.about-center button {
+padding: 0 16px;
+}
+
+.something-about {
+    color: var(--white);
+
+}
+
+.about-sides {
+    display: flex;
+}
+
+.about-sides i {
+    color: var(--green);
+    font-size: 24px;
+}

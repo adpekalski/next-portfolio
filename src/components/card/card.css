@@ -1,0 +1,26 @@
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* !!! change margin top/bottom */
+    margin: var(--card-margin);
+    /* margin-top: 0; */
+
+    border-radius: 10%;
+
+    flex-shrink: 0;
+
+    height: calc(var(--card-size) - (2 *(var(--card-margin))));
+    width: calc(var(--card-size) - (2 *(var(--card-margin))));
+    background-color: aqua;
+
+    overflow: hidden;
+
+    box-shadow: var(--highlight-sm);
+}
+
+.card img {
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,39 @@
+/* reused styles */
+.about-me {
+  margin: var(--card-margin) 0;
+  color: var(--green);
+}
+
+.btn {
+  border-radius: 15px;
+
+  line-height: 1.4;
+
+  /* width: 220px; */
+  font-size: var(--major-2-md);
+
+
+  outline: none;
+
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  border: 2px solid transparent;
+}
+
+.primary-btn {
+  background-color: var(--green);
+  /* background-color: var(--sample); */
+  color: var(--dark);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--white);
+  /* border-color: var(--green); */
+  border-color: var(--sample);
+}

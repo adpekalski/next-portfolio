@@ -1,0 +1,49 @@
+.project {
+    display: flex;
+    flex-direction: column;
+    /* !!! change to center in case of bigger devices */
+    justify-content: flex-start;
+    /* justify-content: center; */
+    align-items: center;
+
+    /* margin-top: 20px; */
+
+
+    /* !!! change for smaller one in case of bigger devices */
+    /* height: calc(100% - (var(--card-margin))); */
+    /* height: calc(100% - (var(--card-margin) + var(--pagination-margin))); */
+
+height: 100%;
+
+    overflow: hidden;
+}
+
+.project--name,
+.project--desc {
+    /* transform: rotate(-1deg); */
+    /* margin: 0; */
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.project--name {
+    color: var(--green);
+    /* transform: translateX(-10%) rotate(-2deg); */
+}
+
+.project--desc {
+    color: var(--white);
+    width: calc(var(--card-size) - 48px);
+
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+
+}
+
+.project--desc:hover {
+    background-color: aqua;
+}
+
+.swipe {
+    color: var(--green);
+}
