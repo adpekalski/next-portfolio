@@ -116,7 +116,8 @@
 }
 
 /* !!! main width */
-.input-group,
+.credentials,
+.message,
 .button-group {
     width: 300px;
 }
@@ -151,10 +152,34 @@ input:focus {
     box-shadow: var(--highlight-sm);
 }
 
-textarea:focus {
+textarea:focus-visible {
     box-shadow: var(--highlight-sm);
 }
 
 button:focus {
     box-shadow: var(--highlight-sm);
+}
+
+@media screen and (min-width: 1280px) {
+    .user-data {
+        display: flex;
+        /* change to row in bigger devices */
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .message {
+        width: 640px;
+    }
+
+    .button-group {
+        justify-content: space-between;
+        width: 640px;
+        /* gap: 40px; */
+    }
+
+    .button-group button {
+        width: 300px;
+    }
+    
 }
