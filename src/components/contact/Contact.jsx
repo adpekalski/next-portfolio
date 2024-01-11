@@ -10,6 +10,8 @@ const Contact = () => {
     const textRef = React.useRef();
     const [focus, setFocus] = React.useState(null);
 
+    // const { register } = React.useFormContext();
+
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -30,30 +32,32 @@ const Contact = () => {
                 <h1 className={second.className + ' contact-me'}>Contact me</h1>
                 <form ref={formRef} onSubmit={sendEmail} className='contact-form'>
                     <div className='user-data'>
-                        <div className='input-group'>
+                        <div className='input-group credentials'>
                             {focus !== "user_name" ? <label>Name</label> : null}
                             <input
                                 type='text'
                                 name="user_name"
                                 onFocus={(e) => { setFocus(e.target.name) }}
                                 onBlur={() => { setFocus(null) }}
+                                required
                             // placeholder='Your name'
 
                             />
                         </div>
-                        <div className='input-group'>
+                        <div className='input-group credentials'>
                             {focus !== "user_email" ? <label>Email</label> : null}
                             <input
                                 type="email"
                                 name="user_email"
                                 onFocus={(e) => { setFocus(e.target.name) }}
                                 onBlur={() => { setFocus(null) }}
+                                required
                             // placeholder='Your e-mail address'
 
                             />
                         </div>
                     </div>
-                    <div className='input-group'>
+                    <div className='input-group message'>
                         {focus !== "message" ? <label>Message</label> : null}
                         <textarea
                             ref={textRef}
@@ -62,6 +66,7 @@ const Contact = () => {
                             rows="1"
                             onFocus={(e) => { setFocus(e.target.name) }}
                             onBlur={() => { setFocus(null) }}
+                            required
                         // placeholder='Please write your message here...'
 
                         />
