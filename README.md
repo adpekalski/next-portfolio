@@ -1,8 +1,8 @@
 ## Upcoming changes
 
-- Retina devices high resolution taken into consideration
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# More style changes related to responsivnes
+- Retina devices high resolution taken into consideration!
+- Further text size changes based on device resolution
 
 ## Getting Started
 
