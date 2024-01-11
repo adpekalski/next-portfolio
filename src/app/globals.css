@@ -57,12 +57,14 @@ html,
 body {
   /* box-sizing: border-box; */
   position: relative;
-  height: 100%;
+  height: calc(100% + 1px);
+  width: calc(100% + 1px);
 }
 
 body {
-  background: rgb(0,8,3);
+  /* background: rgb(0,8,3); */
   background: radial-gradient(circle, rgba(0,8,3,1) 0%, rgba(5,3,1,1) 25%, rgba(3,0,0,1) 100%);
+  /* background-size: 101% 101%; */
   font-size: 14px;
   /* color: red; */
   margin: 0;
