@@ -1,8 +1,10 @@
-## Upcoming changes
+# Upcoming changes
 
-# More style changes related to responsivnes
+## More style changes related to responsivnes
 - Retina devices high resolution taken into consideration!
 - Further text size changes based on device resolution
+
+# How to run this code on your device
 
 ## Getting Started
 
