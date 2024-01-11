@@ -40,10 +40,6 @@
     transform: translate(-50%, -50%);
 }
 
-.circle-mobile {
-    transform: translate(-50%, -55%);
-}
-
 .home--poster {
     margin: 16px;
     padding: 12px;
@@ -60,18 +56,12 @@
     align-items: center;
     justify-content: center;
 
-    /* height: 700px;
-    width: 700px; */
+    /* width: 55vw;
+    height: 55vw; */
 
-    /* height: 70vw;
-    width: 70vw; */
+    /* height: var(--_user_width);
+    width: var(--_user_width); */
 
-
-    height: var(--_user_width);
-    width: var(--_user_width);
-
-    /* height: var(--photo-size);
-    width: var(--photo-size); */
 
 
 }
@@ -95,10 +85,14 @@
 }
 
 .home img {
-    display: block;
+    /* display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; */
+
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .home--image img {
@@ -257,5 +251,96 @@
 
     .top--left .logo {
         width: 60px;
+    }
+}
+
+/* mobile and tablets - portrait */
+
+@media only screen and (orientation: portrait) {
+    .home--poster {
+        width: 100vw;
+        height: 100vw;
+
+    }
+
+    .home--circle {
+        transform: translate(-50%, -55%);
+    }
+}
+
+/* tablets? */
+
+@media only screen and (min-aspect-ratio: 1/1.9) and (orientation: portrait) {
+    .home--poster {
+        width: 85vw;
+        height: 85vw;
+
+    }
+}
+
+@media only screen and (min-aspect-ratio: 2/3) and (orientation: portrait) {
+    .home--poster {
+        width: 75vw;
+        height: 75vw;
+
+    }
+
+    .home--circle {
+        transform: translate(-50%, -60%);
+    }
+}
+
+@media only screen and (min-aspect-ratio: 3/4) and (orientation: portrait) {
+    .home--poster {
+        width: 65vw;
+        height: 65vw;
+
+    }
+}
+
+@media only screen and (min-aspect-ratio: 5/6) and (orientation: portrait) {
+    .home--poster {
+        width: 55vw;
+        height: 55vw;
+
+    }
+}
+
+/* under 3/2 */
+@media only screen and (max-aspect-ratio: 3/2) and (orientation: landscape) {
+    .home--poster {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .home--circle {
+        transform: translate(-50%, -60%);
+    }
+}
+
+/* over 3/2 */
+@media only screen and (min-aspect-ratio: 3/2) and (orientation: landscape) {
+    .home--poster {
+        width: 50vw;
+        height: 50vw;
+
+    }
+}
+
+/* over 16:9 */
+@media only screen and (min-aspect-ratio: 16/9) and (orientation: landscape) {
+    .home--poster {
+        width: 45vw;
+        height: 45vw;
+
+    }
+}
+
+/* over 21:9 */
+@media only screen and (min-aspect-ratio: 21/9) and (orientation: landscape) {
+    .home--poster {
+        width: 38vw;
+        height: 38vw;
+
     }
 }
