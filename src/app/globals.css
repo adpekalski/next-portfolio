@@ -90,11 +90,12 @@ body {
 
 .cardSwiper {
   position: relative;
-  overflow: visible;
+  /* overflow: visible; */
+  /* overflow-y: visible; */
 }
 
 .cardSwiper .swiper-wrapper {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .cardSwiper .swiper-slide {
@@ -110,8 +111,10 @@ body {
 } */
 
 .cardSwiper .swiper-pagination {
-  bottom: -30px;
+  position: relative;
+  /* bottom: -30px; */
   /* display: none; */
+  margin-top: var(--card-margin);
 }
 
 .mainSwiper .swiper-pagination-bullet {
@@ -121,7 +124,7 @@ body {
 }
 
 .mainSwiper .swiper-pagination-bullets .swiper-pagination-bullet {
-  margin: 12px 0;
+  margin: 12px 4px;
 }
 
 .cardSwiper .swiper-pagination-bullets .swiper-pagination-bullet {
