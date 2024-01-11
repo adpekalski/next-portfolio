@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import avatar from '$/avatar.png';
+import logo from '$/logo_ww.png';
 import './home.css';
 
 import { motion, useAnimate } from 'framer-motion';
@@ -14,10 +15,13 @@ import { GitHub, Linkedin, Mail } from 'react-feather';
 // on tabing to another part it should tab to the whole
 // hide other tab indexes from next slide or tab to whole slide
 
-const Home = () => {
+const Home = (props) => {
+    const { usedSize, device } = props;
 
     const homeRef = React.useRef(null);
-    const [usedSize, setSize] = React.useState(null);
+    const whichCircle = device === "desktop" ? "circle-desktop" : "circle-mobile";
+
+
     const [scope, animate] = useAnimate();
 
     const colorLoop = ["#014c0f", "#02a522", "#55fc75"];
@@ -32,30 +36,6 @@ const Home = () => {
 
     React.useEffect(() => {
 
-        const handleResize = () => {
-            // height = window.innerHeight;
-            // width = window.innerWidth;
-            let height = window.innerHeight;
-            let width = window.innerWidth;
-            let choosenSize = null;
-            let ratio = height / width;
-            console.log(ratio);
-            // take all devices here - tablet mostly needed
-            // and move it higer in media for tablets
-            // if (width < 425) {
-            if (ratio >= 2) {
-                choosenSize = width;
-            } else if (ratio > 1.5 && ratio < 2) {
-                choosenSize = width * 0.9;
-            } else if (ratio <= 1.5 && ratio > 1) {
-                // tablet ratio - move image higher
-                choosenSize = width * 0.7;
-            } else {
-                choosenSize = width * 0.5;
-            }
-            setSize(choosenSize);
-        };
-
         const showAnimation = async () => {
             await animate(
                 ".home--circle",
@@ -64,10 +44,7 @@ const Home = () => {
             )
         }
 
-        window.addEventListener('resize', handleResize);
-        handleResize();
         showAnimation();
-        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
 
@@ -81,7 +58,8 @@ const Home = () => {
 
             <motion.div
                 // ref={scope}
-                className='home--circle'
+                // className='home--circle'
+                className={['home--circle', `${whichCircle}`].join(" ")}
                 animate={{
                     color: shadowLoop,
                     backgroundColor: colorLoop,
@@ -94,7 +72,8 @@ const Home = () => {
                     animate={{
                         color: shadowLoop,
                     }}
-                    transition={transitionOptions}>
+                    transition={transitionOptions}
+                >
                     <div className='home--image'>
                         <Image
                             alt='avatar'
@@ -107,7 +86,12 @@ const Home = () => {
 
             <div className='top'>
                 <div className='top--left'>
-                    <h1>WebWeaverDev</h1>
+                    {/* <h1>WebWeaverDev</h1> */}
+                    <Image
+                        className='logo'
+                        alt='logo'
+                        src={logo}
+                    />
                 </div>
 
                 <div className='top--right'>
