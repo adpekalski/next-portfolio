@@ -3,7 +3,7 @@ import React from 'react';
 import './about.css';
 import '@/components/ultimate.css';
 import { second } from '@/app/fonts';
-import CV from '$/CV.pdf';
+// import CV from '$/CV.pdf';
 
 import { motion } from 'framer-motion';
 
@@ -38,7 +38,7 @@ const About = (props) => {
                     </p>
 
                     <a
-                        href={CV}
+                        href='./public/CV.pdf'
                         download='Pękalski_Adrian_CV.pdf'
                     >
                         <button
