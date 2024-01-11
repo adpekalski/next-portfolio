@@ -13,7 +13,7 @@
 
     height: calc(var(--card-size) - (2 *(var(--card-margin))));
     width: calc(var(--card-size) - (2 *(var(--card-margin))));
-    background-color: aqua;
+    /* background-color: aqua; */
 
     overflow: hidden;
 
