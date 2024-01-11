@@ -12,6 +12,7 @@
   /* --sample: #46c1b0; */
   /* --sample: #216259; */
   --sample: #1a4e47;
+  --wrong: #4e1a1a;
   --green: #55fc75;
 
 
@@ -22,6 +23,7 @@
   --pagination-margin: 24px;
 
   --highlight-sm: 0 0 12px 8px var(--sample);
+  --highlight-sm-wrong: 0 0 12px 8px var(--wrong);
   --highlight-md: 0 0 24px 16px var(--sample);
 
   /* font sizes */
@@ -34,14 +36,14 @@
   --major-2-xxl: 23px;
   --major-2-giant: 26px;
 
-   /* other - major third */
-   --major-3-xs: 11px;
-   --major-3-sm: 13px;
-   --major-3-md: 16px;
-   --major-3-lg: 20px;
-   --major-3-xl: 25px;
-   --major-3-xxl: 31px;
-   --major-3-giant: 39px;
+  /* other - major third */
+  --major-3-xs: 11px;
+  --major-3-sm: 13px;
+  --major-3-md: 16px;
+  --major-3-lg: 20px;
+  --major-3-xl: 25px;
+  --major-3-xxl: 31px;
+  --major-3-giant: 39px;
 
 
 }
@@ -59,10 +61,10 @@ body {
 }
 
 body {
-  background: var(--dark);
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  background: rgb(0,8,3);
+  background: radial-gradient(circle, rgba(0,8,3,1) 0%, rgba(5,3,1,1) 25%, rgba(3,0,0,1) 100%);
   font-size: 14px;
-  color: #000;
+  /* color: red; */
   margin: 0;
   padding: 0;
 }
@@ -85,22 +87,43 @@ body {
 
 .cardSwiper {
   position: relative;
+  overflow: visible;
 }
 
 .cardSwiper .swiper-slide {
   align-items: flex-start;
+
 }
 
-.swiper-slide img {
+/* .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
 
 .cardSwiper .swiper-pagination {
-  bottom: 0px;
-  display: none;
+  bottom: -30px;
+  /* display: none; */
+}
+
+.mainSwiper .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+
+}
+
+.mainSwiper .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 12px 0;
+}
+
+.cardSwiper .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 4px;
+}
+
+.cardSwiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
 }
 
 .swiper-pagination-bullet {
@@ -115,7 +138,7 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
   /* disable swiper pagination in smaller devices */
   .mainSwiper>.swiper-pagination {
@@ -123,3 +146,11 @@ body {
   }
 }
 
+@media screen and (min-width: 1024px) and (min-height: 620px) {
+
+  .cardSwiper .swiper-pagination {
+    /* bottom: -30px; */
+    display: none;
+  }
+
+}
