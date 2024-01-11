@@ -5,6 +5,8 @@ import Image from 'next/image';
 import test from '$/avatar.png';
 import './card.css';
 
+import { projectsData } from '@/data/ProjectsData';
+
 // import test from '../../../public/avatar.png';
 
 
@@ -15,8 +17,9 @@ const Card = (props) => {
         <div className='card'>
             {/* <img src={test} /> */}
             <Image
+                className='card-image'
                 alt='portfolio'
-                src={test}
+                src={projectsData.projectImg[picture]}
             />
 
         </div>
