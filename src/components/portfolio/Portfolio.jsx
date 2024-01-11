@@ -8,14 +8,70 @@ import 'swiper/css/pagination';
 
 import './portfolio.css';
 
-import Project from '../project/Project';
+import { Play } from 'react-feather';
 
-const Portfolio = () => {
+import Project from '../project/Project';
+import { projectsData } from '@/data/ProjectsData';
+
+const Portfolio = (props) => {
+    const { usedHeight, usedSize, device } = props;
+
+    const numberOfProjects = Object.entries(projectsData.projectImg).length;
+    const numberOfBullets = numberOfProjects - 1;
+    const swiperRef = React.useRef(null);
+    const [activeSlide, setActiveSlide] = React.useState(0);
+    const slides = [];
+    const pagination = [];
+
+    for (let i = 0; i < numberOfProjects; i++) {
+        slides.push(
+            <SwiperSlide key={"slide" + i}>
+                <Project which={i + 1} usedHeight={usedHeight} usedSize={usedSize} device={device}>
+
+                </Project>
+            </SwiperSlide>
+        )
+    }
+
+    for (let i = 0; i < numberOfBullets; i++) {
+        pagination.push(
+            <p
+                key={"bullet" + i}
+                className={activeSlide === i ? "swipe-active" : "swipe"}
+                onClick={() => {
+                    swiperRef.current.swiper.slideTo(i);
+                }}
+            >
+                {i}
+            </p>
+        )
+    }
+
+    // Object.entries(projectsData.projectImg).forEach((item, index) => {
+    //     pagination.push(
+    //         <p
+    //             key={"swipe" + index}
+    //             className={activeSlide === index ? "swipe-active" : "swipe"}
+    //             onClick={() => {
+    //                 swiperRef.current.swiper.slideTo(index);
+    //             }}
+    //         >
+    //             {index}
+    //         </p>
+    //     )
+    // })
+
     return (
         <section className='portfolio' id='portfolio'>
 
             <div className='card-container'>
                 <Swiper
+                    ref={swiperRef}
+                    onSlideChange={(swiperCore) => {
+                        const { activeIndex } = swiperCore;
+                        setActiveSlide(activeIndex);
+                    }}
+
                     // direction={'horizontal'}
                     breakpoints={{
                         540: {
@@ -40,28 +96,28 @@ const Portfolio = () => {
                     modules={[Grid, Pagination]}
                     className='cardSwiper'
                 >
-                    <SwiperSlide>
-                        <Project which="first">
-
-                        </Project>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Project which="second">
-
-                        </Project>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Project which="third">
-
-                        </Project>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Project which="first">
-
-                        </Project>
-                    </SwiperSlide>
+                    {slides}
                 </Swiper>
-                <p className='swipe'>swipe</p>
+                {
+                    device === "desktop" && numberOfProjects > 2 && usedHeight > 600 ?
+                        <div className='custom-pagination'>
+                            <Play
+                                className={activeSlide !== 0 ? "play-green" : "play-white"}
+                                onClick={() => {
+                                    swiperRef.current.swiper.slidePrev();
+                                }}
+                            />
+                            {pagination}
+                            <Play
+                                className={(activeSlide + 1) !== numberOfBullets ? "play-green" : "play-white"}
+                                onClick={() => {
+                                    swiperRef.current.swiper.slideNext();
+                                }}
+                            />
+                        </div>
+                        :
+                        null
+                }
             </div>
 
 

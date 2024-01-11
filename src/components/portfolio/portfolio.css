@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .card-container {
@@ -14,6 +14,13 @@
     align-items: center;
     justify-content: center;
 
+    /* background-color: grey; */
+
+    /* maybe only on mobile */
+    /* border: solid var(--green); */
+    /* border-width: 1px 0 1px 0; */
+    /* border-radius: 15px; */
+
     /* height: 600px;
     width: var(--card-size); */
 
@@ -21,21 +28,61 @@
     /* height: fit-content; */
     /* !!! change to less in case of bigger devices (lets say 70) */
     /* and make card margin bigger and  */
-    max-height: 90%;
+    max-height: 90vh;
+    margin-bottom: 20px;
     /* height: 90%; */
     width: 90%;
 
     margin: auto;
 
+    /* !!!!!!! */
     /* overflow: hidden; */
 
-    /* margin-top: 20px; */
 
-    /* margin-bottom: 20px; */
 
-    /* background-color: var(--white); */
 
-    /* border-radius: 15%; */
+}
 
-    
+.custom-pagination {
+    display: flex;
+    align-items: center;
+    color: var(--green);
+    font-size: 32px;
+    gap: 10px;
+    margin-top: var(--card-margin);
+    /* margin: 24px; */
+    /* width: 100%; */
+    justify-content: space-between;
+}
+
+.custom-pagination p {
+    margin: 0;
+}
+
+.custom-pagination > *:first-child {
+    /* color: aliceblue; */
+    rotate: 180deg;
+    margin-right: 20px;
+}
+
+.custom-pagination > *:last-child {
+    /* color: aliceblue; */
+    /* rotate: 180deg; */
+    margin-left: 20px;
+}
+
+.swipe {
+    color: var(--white);
+}
+
+.swipe-active {
+    color: var(--green);
+}
+
+.play-green {
+    color: var(--green);
+}
+
+.play-white {
+    color: var(--white);
 }
