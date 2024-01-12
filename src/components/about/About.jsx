@@ -39,8 +39,7 @@ const About = (props) => {
 
                     <a
                         href='/CV.pdf'
-                        // download='Pękalski_Adrian_CV.pdf'
-                        download
+                        download='Pękalski_Adrian_CV.pdf'
                     >
                         <button
                             type='button'
