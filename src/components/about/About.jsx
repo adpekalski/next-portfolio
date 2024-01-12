@@ -38,8 +38,8 @@ const About = (props) => {
                     </p>
 
                     <a
-                        href='/CV.pdf'
-                        download='Pękalski_Adrian_CV.pdf'
+                        href='/Pękalski_Adrian_CV.pdf'
+                        download
                     >
                         <button
                             type='button'
