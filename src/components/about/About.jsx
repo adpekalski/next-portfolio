@@ -17,6 +17,7 @@ const About = (props) => {
 
     const mobileClass = device === "mobile" ? "" : "display-none";
 
+    let minHeight = window.matchMedia("(min-height: 900px)");
 
     return (
         <section className='about' id='about' tabIndex={0}>
@@ -31,7 +32,7 @@ const About = (props) => {
                         className='something-about'
                     >
                         {
-                            device !== "mobile" ?
+                            minHeight.matches ?
                                 aboutContent.aboutText[1]
                                 : aboutContent.shortAboutText[1]
                         }
