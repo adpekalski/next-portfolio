@@ -119,6 +119,7 @@ p {
 .two-columns {
     display: flex;
     gap: 20px;
+    max-width: 700px;
 }
 
 .two-columns .something-about:last-of-type {
