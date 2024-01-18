@@ -26,8 +26,8 @@ However, in this case, with only personal use in mind, time was a decisive facto
 ### Interaction
 - The **Go Back** button currently works based on user search history (not functioning when the website is accessed through a link).
   - This button should be changed to work based on history **OR** bring the user back to the search engine (let's say Google).
-- The current navigation on desktops isn't the most intuitive (scrolling by dragging or via pagination).
-  - Addition of navigation through using the scroll wheel.
+- ~~The current navigation on desktops isn't the most intuitive (scrolling by dragging or via pagination).~~
+  - ~~Addition of navigation through using the scroll wheel.~~
 
 ### Style
 - New animations and upgrades for the ones currently used.
