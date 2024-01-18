@@ -15,14 +15,13 @@ import { GitHub, Linkedin, Mail } from 'react-feather';
 // on tabing to another part it should tab to the whole
 // hide other tab indexes from next slide or tab to whole slide
 
-const Home = (props) => {
-    const { usedSize, device } = props;
+const Home = () => {
 
-    const homeRef = React.useRef(null);
-    const whichCircle = device === "desktop" ? "circle-desktop" : "circle-mobile";
+    // const homeRef = React.useRef(null);
+    // const whichCircle = device === "desktop" ? "circle-desktop" : "circle-mobile";
 
 
-    const [scope, animate] = useAnimate();
+    // const [scope, animate] = useAnimate();
 
     const colorLoop = ["#014c0f", "#02a522", "#55fc75"];
     const shadowLoop = ["#0e2b27", "#123833", "#1a4e47"];
@@ -34,40 +33,60 @@ const Home = (props) => {
         repeatType: "reverse",
     }
 
-    React.useEffect(() => {
+    // React.useEffect(() => {
 
-        const showAnimation = async () => {
-            await animate(
-                ".home--circle",
-                { opacity: [1, 0, 1] },
-                { duration: 1 },
-            )
-        }
+    //     const showAnimation = async () => {
+    //         await animate(
+    //             ".home--circle",
+    //             { opacity: [1, 0, 1] },
+    //             { duration: 1 },
+    //         )
+    //     }
 
-        showAnimation();
-    }, []);
+    //     showAnimation();
+    // }, []);
 
 
 
-    React.useEffect(() => {
-        homeRef.current.style.setProperty('--_user_width', usedSize + 'px');
-    })
+    // React.useEffect(() => {
+    //     homeRef.current.style.setProperty('--_user_width', usedSize + 'px');
+    // })
 
     return (
-        <section ref={scope} className={second.className + ' home'} id='home'>
+        <motion.section
+            // ref={scope}
+            className={second.className + ' home'}
+            id='home'
+            // whileInView={{
+            //     opacity: [1, 0, 1],
+            //     transition: {
+            //         // times: !!!!!
+            //         duration: 1
+            //     }
+            // }}
+            // viewport={{ once: true }}
+        >
 
             <motion.div
                 // ref={scope}
-                // className='home--circle'
-                className={['home--circle', `${whichCircle}`].join(" ")}
+                className='home--circle'
+                // className={['home--circle', `${whichCircle}`].join(" ")}
+                whileInView={{
+                    opacity: [0.8, 0.2, 0.9, 0.3, 0.9, 0.4, 1.5, 1],
+                    transition: {
+                        times: [0.3, 0.33, 0.5, 0.54, 0.60, 0.65, 0.8, 1],
+                        duration: 5
+                    }
+                }}
                 animate={{
                     color: shadowLoop,
                     backgroundColor: colorLoop,
                 }}
                 transition={transitionOptions}
+                viewport={{ once: true }}
             >
                 <motion.div
-                    ref={homeRef}
+                    // ref={homeRef}
                     className='home--poster'
                     animate={{
                         color: shadowLoop,
@@ -85,14 +104,33 @@ const Home = (props) => {
             </motion.div>
 
             <div className='top'>
-                <div className='top--left'>
-                    {/* <h1>WebWeaverDev</h1> */}
+                <motion.div
+                    className='top--left'
+                    whileInView={{
+                        rotate: [0, 360],
+                        transition: {
+                            duration: 0.9,
+                            ease: "anticipate",
+
+                        }
+                    }}
+                    animate={{
+                        scale: [1, 1.05, 1]
+                    }}
+                    transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        ease: "easeInOut"
+                    }}
+                    viewport={{ once: true }}
+                >
                     <Image
                         className='logo'
                         alt='logo'
                         src={logo}
                     />
-                </div>
+                </motion.div>
 
                 <div className='top--right'>
                     <h1>Adrian<br />Pękalski</h1>
@@ -118,7 +156,7 @@ const Home = (props) => {
                 </div>
             </div>
 
-        </section>
+        </motion.section>
     );
 };
 
