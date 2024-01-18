@@ -57,7 +57,12 @@
 .contact-form {
     display: flex;
     flex-direction: column;
-    padding: var(--card-margin) 0;
+    /* padding: var(--card-margin) 0; */
+}
+
+.contact-form p {
+    font-size: var(--text-md);
+    margin: 16px;
 }
 
 .user-data {
@@ -78,7 +83,7 @@
 }
 
 .input-group label {
-    font-size: var(--major-2-xs);
+    font-size: var(--text-sm);
     line-height: 1.4;
     position: absolute;
     top: -10px;
@@ -89,10 +94,14 @@
 
 }
 
+.input-group input {
+    height: 32px;
+}
+
 .input-group input,
 .input-group textarea {
     width: 100%;
-    height: 32px;
+
     padding: 8px 12px;
 
     border: none;
@@ -109,7 +118,7 @@
     line-height: 1.4;
 
     /* width: 220px; */
-    font-size: var(--major-2-md);
+    font-size: var(--text-md);
 
 
     outline: none;
@@ -118,14 +127,16 @@
 /* !!! main width */
 .credentials,
 .message,
-.button-group {
+.contact-buttons {
     width: 300px;
 }
 
 .input-group textarea {
     border: none;
     resize: none;
-    min-height: 160px;
+    /* min-height: 160px; */
+    height: 160px;
+    /* max-height: 80%; */
     padding: 14px 12px;
     display: flex;
     flex-direction: column;
@@ -135,15 +146,14 @@
 
 /* . */
 
-.button-group {
+.contact-buttons {
     display: flex;
     justify-content: space-between;
     margin: 16px 20px;
 
 }
 
-.btn-send,
-.btn-clear {
+.contact-buttons button {
     width: 45%;
 }
 
@@ -172,14 +182,23 @@ button:focus {
         width: 640px;
     }
 
-    .button-group {
+    .contact-buttons {
         justify-content: space-between;
         width: 640px;
         /* gap: 40px; */
     }
 
-    .button-group button {
+    .contact-form .contact-buttons button {
         width: 300px;
+    }
+    
+}
+
+@media screen and (min-height: 800px) {
+
+    .input-group textarea {
+
+        height: 240px;
     }
     
 }
