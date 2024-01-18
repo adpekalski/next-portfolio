@@ -2,26 +2,21 @@
 
 import React from 'react';
 import Image from 'next/image';
+
 import avatar from '$/avatar.png';
 import logo from '$/logo_ww.png';
 import './home.css';
 
-import { motion, useAnimate } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { second } from '@/app/fonts';
 
-import { GitHub, Linkedin, Mail } from 'react-feather';
+import { GitHub, Linkedin } from 'react-feather';
 
 // on tabing to another part it should tab to the whole
 // hide other tab indexes from next slide or tab to whole slide
 
 const Home = () => {
-
-    // const homeRef = React.useRef(null);
-    // const whichCircle = device === "desktop" ? "circle-desktop" : "circle-mobile";
-
-
-    // const [scope, animate] = useAnimate();
 
     const colorLoop = ["#014c0f", "#02a522", "#55fc75"];
     const shadowLoop = ["#0e2b27", "#123833", "#1a4e47"];
@@ -33,44 +28,16 @@ const Home = () => {
         repeatType: "reverse",
     }
 
-    // React.useEffect(() => {
-
-    //     const showAnimation = async () => {
-    //         await animate(
-    //             ".home--circle",
-    //             { opacity: [1, 0, 1] },
-    //             { duration: 1 },
-    //         )
-    //     }
-
-    //     showAnimation();
-    // }, []);
-
-
-
-    // React.useEffect(() => {
-    //     homeRef.current.style.setProperty('--_user_width', usedSize + 'px');
-    // })
+    const ctaText = Array.from("SCROLL TO SEE MY PROJECTS");
 
     return (
         <motion.section
-            // ref={scope}
             className={second.className + ' home'}
             id='home'
-            // whileInView={{
-            //     opacity: [1, 0, 1],
-            //     transition: {
-            //         // times: !!!!!
-            //         duration: 1
-            //     }
-            // }}
-            // viewport={{ once: true }}
         >
 
             <motion.div
-                // ref={scope}
                 className='home--circle'
-                // className={['home--circle', `${whichCircle}`].join(" ")}
                 whileInView={{
                     opacity: [0.8, 0.2, 0.9, 0.3, 0.9, 0.4, 1.5, 1],
                     transition: {
@@ -85,15 +52,42 @@ const Home = () => {
                 transition={transitionOptions}
                 viewport={{ once: true }}
             >
+
                 <motion.div
-                    // ref={homeRef}
                     className='home--poster'
                     animate={{
                         color: shadowLoop,
                     }}
                     transition={transitionOptions}
                 >
+                    <motion.div
+                        className='cta-container'
+                        animate={{
+                            rotate: [-154, 206],
+                            transition: {
+                                repeat: Infinity,
+                                duration: 30,
+                                ease: "linear"
+                            }
+                        }}
+                    >
+                        {ctaText.map((char, index) => {
+                            return (
+                                <motion.h2
+                                    key={index}
+                                    className='cta white-text'
+                                    animate={{
+                                        rotate: index * 6,
+                                    }}
+                                >
+                                    {char === " " ? "\u00A0" : char}
+                                </motion.h2>
+                            )
+                        })}
+                    </motion.div>
+
                     <div className='home--image'>
+
                         <Image
                             alt='avatar'
                             src={avatar}
@@ -150,8 +144,6 @@ const Home = () => {
                         <a href='https://github.com/adpekalski' rel='noreferrer' target='_blank'>
                             <GitHub className='icon' />
                         </a>
-
-                        {/* <Mail /> */}
                     </div>
                 </div>
             </div>

@@ -43,6 +43,7 @@
 } */
 
 .home--poster {
+    position: relative;
     margin: 16px;
     padding: 12px;
 
@@ -68,11 +69,33 @@
 
 }
 
+.cta-container {
+    position: relative;
+    width: 95%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+
+    /* transform: rotate(-104deg); */
+}
+
+.cta {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: 0;
+    height: 50%;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transform-origin: bottom;
+}
+
 .home--image {
 
 
     display: flex;
 
+    position: absolute;
 
     align-items: center;
     justify-content: center;
