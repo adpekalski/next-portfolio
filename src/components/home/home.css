@@ -103,7 +103,7 @@
 }
 
 .home h1 {
-    font-size: var(--major-3-lg);
+    font-size: var(--text-xl);
 }
 
 .top--left,
@@ -119,14 +119,12 @@
     /* padding: 24px 24px 24px 0; */
 }
 
-.top--left h1,
 .bottom--left h1 {
     text-align: left;
     margin: 0;
 }
 
-.top--right h1,
-.bottom--right h1 {
+.top--right h1 {
     text-align: right;
     margin: 0;
 
@@ -226,7 +224,6 @@
     }
 
     .home h1 {
-        font-size: var(--major-2-xl);
         /* line-height: 1; */
     }
 
