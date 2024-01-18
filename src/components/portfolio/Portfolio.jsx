@@ -6,15 +6,17 @@ import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 
+import { motion } from 'framer-motion';
+
 import './portfolio.css';
 
 import { Play } from 'react-feather';
 
+import { projectsData } from '@/data/WebsiteData';
 import Project from '../project/Project';
-import { projectsData } from '@/data/ProjectsData';
 
 const Portfolio = (props) => {
-    const { usedHeight, usedSize, device } = props;
+    const { minHeight } = props;
 
     const numberOfProjects = Object.entries(projectsData.projectImg).length;
     const numberOfBullets = numberOfProjects - 1;
@@ -26,7 +28,7 @@ const Portfolio = (props) => {
     for (let i = 0; i < numberOfProjects; i++) {
         slides.push(
             <SwiperSlide key={"slide" + i}>
-                <Project which={i + 1} usedHeight={usedHeight} usedSize={usedSize} device={device}>
+                <Project which={i + 1} minHeight={minHeight}>
 
                 </Project>
             </SwiperSlide>
@@ -64,7 +66,18 @@ const Portfolio = (props) => {
     return (
         <section className='portfolio' id='portfolio'>
 
-            <div className='card-container'>
+            <motion.div
+                className='card-container'
+                // initial={{
+                //     y: 200
+                // }}
+                // whileInView={{
+                //     y: 0
+                // }}
+                // transition={{
+                //     duration: 5
+                // }}
+            >
                 <Swiper
                     ref={swiperRef}
                     onSlideChange={(swiperCore) => {
@@ -99,7 +112,7 @@ const Portfolio = (props) => {
                     {slides}
                 </Swiper>
                 {
-                    device === "desktop" && numberOfProjects > 2 && usedHeight > 600 ?
+                    numberOfProjects > 2 ?
                         <div className='custom-pagination'>
                             <Play
                                 className={activeSlide !== 0 ? "play-green" : "play-white"}
@@ -118,7 +131,7 @@ const Portfolio = (props) => {
                         :
                         null
                 }
-            </div>
+            </motion.div>
 
 
         </section>
