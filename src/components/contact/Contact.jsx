@@ -5,15 +5,21 @@ import { motion } from 'framer-motion';
 import './contact.css';
 import { second } from '@/app/fonts';
 
+import Title from '../title/Title';
+import Button from '../button/Button';
+
 const Contact = () => {
     const formRef = React.useRef();
     const textRef = React.useRef();
     const [focus, setFocus] = React.useState(null);
+    const [visible, setVisibility] = React.useState("non-visible");
 
     // const { register } = React.useFormContext();
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setVisibility(true);
+
 
         // emailjs.sendForm('service_ttmmwda', 'template_vwj89gi', form.current, 'Ae9_zqRZKzMwltn9s')
         //     .then((result) => {
@@ -29,7 +35,7 @@ const Contact = () => {
 
         <section className='contact' id='contact'>
             <div className='contact-container'>
-                <h1 className={second.className + ' contact-me'}>Contact me</h1>
+                <Title>Contact me</Title>
                 <form ref={formRef} onSubmit={sendEmail} className='contact-form'>
                     <div className='user-data'>
                         <div className='input-group credentials'>
@@ -71,24 +77,32 @@ const Contact = () => {
 
                         />
                     </div>
-                    <div className='button-group'>
-                        <button
+                    <div className='contact-buttons'>
+                        <Button style="secondary" type="button" onClick={() => { textRef.current.value = "" }}>
+                            Clear
+                        </Button>
+                        {/* <button
                             type="button"
                             className='btn-clear secondary-btn btn'
                             onClick={() => { textRef.current.value = "" }}
                         >
                             Clear
-                        </button>
-                        <button
+                        </button> */}
+                        {/* <button
                             type="submit"
                             value="Send"
                             className='btn-send primary-btn btn'
                         >
                             Submit
-                        </button>
+                        </button> */}
+                        <Button style="primary" type="submit" value="Send">
+                            Submit
+                        </Button>
 
                     </div>
+                    <p className={"white-text " + `${visible}`}>Your message was sent succesfully</p>
                 </form>
+
 
             </div>
         </section>
