@@ -9,17 +9,50 @@ import 'swiper/css/pagination';
 
 // import './App.css';
 import './globals.css';
+import "@/components/ultimate.css";
+
+import { second } from '@/app/fonts';
+
+import { warningPage } from '@/data/WebsiteData';
 
 import Home from '@/components/home/Home';
 import About from '@/components/about/About';
 import Portfolio from '@/components/portfolio/Portfolio';
 import Contact from '@/components/contact/Contact';
 
+import Title from '@/components/title/Title';
+
+import Button from '@/components/button/Button';
+
 export default function Page() {
+
+
 
   const [usedHeight, setHeight] = React.useState(null);
   const [usedSize, setSize] = React.useState(null);
   const [device, setDevice] = React.useState(null);
+
+  const [noDisplay, setNoDisplay] = React.useState("display-none")
+  const [isWarning, clearWarning] = React.useState(false);
+
+  // let noDisplay = "display-none";
+  React.useEffect(() => {
+    !isWarning ? setNoDisplay(" ") : null;
+    clearWarning(JSON.parse(window.sessionStorage.getItem("warningCleared")));
+
+  }, [])
+
+  const [minHeight, setHeightMatch] = React.useState(false);
+  const [minDeviceForMoreText, setDeviceMatchMoreText] = React.useState(false);
+  const [minDeviceForSplit, setDeviceMatchSplit] = React.useState(false);
+
+  React.useEffect(() => {
+    setHeightMatch(window.matchMedia("(min-height: 900px)").matches);
+    let deviceMatchMoreText = window.matchMedia("(min-height: 900px)").matches && window.matchMedia("(min-width: 600px").matches;
+    let deviceMatchSplit = window.matchMedia("(min-height: 900px)").matches && window.matchMedia("(min-width: 1280px").matches;
+    setDeviceMatchMoreText(deviceMatchMoreText);
+    setDeviceMatchSplit(deviceMatchSplit);
+  })
 
   React.useEffect(() => {
 
@@ -30,7 +63,6 @@ export default function Page() {
       let width = window.innerWidth;
       let choosenSize = null;
       let ratio = height / width;
-      console.log(ratio);
       // take all devices here - tablet mostly needed
       // and move it higer in media for tablets
       // if (width < 425) {
@@ -50,7 +82,6 @@ export default function Page() {
       }
       setHeight(height);
       setSize(choosenSize);
-      console.log(device);
     };
 
     window.addEventListener('resize', handleResize);
@@ -59,29 +90,56 @@ export default function Page() {
   }, []);
 
   return (
-    // <>
-    <Swiper
-      direction={'vertical'}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[Pagination]}
-      className='mainSwiper'
-    >
+    // cause at the start there was only god
+    <div className='god'>
+      {
+        isWarning ?
+          <Swiper
+            direction={'vertical'}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className='mainSwiper'
+          >
 
-      <SwiperSlide>
-        <Home usedSize={usedSize} device={device} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <About device={device} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Portfolio usedHeight={usedHeight} usedSize={usedSize} device={device} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Contact />
-      </SwiperSlide>
-    </Swiper>
-    // </>
+            <SwiperSlide>
+              <Home />
+            </SwiperSlide>
+            <SwiperSlide>
+              <About minDeviceForMoreText={minDeviceForMoreText} minDeviceForSplit={minDeviceForSplit} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Portfolio minHeight={minHeight} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Contact />
+            </SwiperSlide>
+          </Swiper>
+          :
+          <div className={`warning-page ${noDisplay}`}>
+            <Title solid={true}>Epilepsy warning</Title>
+            <p className='white-text'>{warningPage.warningText[1]}</p>
+            <p className='white-text'>{warningPage.warningText[2]}</p>
+            <div className='warning-buttons'>
+              <Button
+                style="secondary"
+                onClick={() => history.back()}
+              >
+                Go Back
+              </Button>
+              <Button
+                style="primary"
+                onClick={() => {
+                  clearWarning(true);
+                  window.sessionStorage.setItem("warningCleared", true);
+                }}
+              >
+                Continue
+              </Button>
+            </div>
+          </div>
+      }
+    </div>
   );
 }
