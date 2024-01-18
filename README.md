@@ -47,6 +47,7 @@ However, in this case, with only personal use in mind, time was a decisive facto
 - About me section as a card?
 - Addition of particle effects on the home page?
 - Next page or new content for current pages?
+- Filter single characters at the end of line in texts and move to next one? 
   
 # How to run this code on your device
 
