@@ -19,7 +19,7 @@
 
     flex-direction: column;
 
-    gap: 20px;
+    /* gap: 20px; */
 
     /* gap: 24px; */
 
@@ -47,7 +47,7 @@
 .about-center {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
     /* gap: calc(var(--card-margin) * 2); */
     /* margin: 24px; */
 
@@ -56,46 +56,75 @@
     /* overflow: hidden; */
 
     width: 60%;
+
+    /* max-height: 80%;
+    overflow: hidden; */
+
+    /* padding-bottom: 200px; */
 }
 
-.about-center>* {
+/* !!!!!!!!!! */
+.about-center .something-about,
+.about-center .download-anchor {
     margin: var(--card-margin) 0;
 
     /* overflow: hidden; */
 }
 
 .about-center a {
-
+/* margin: auto; */
     text-decoration: none;
+    border-radius: 15px;
 
 }
 
-.about-center h1,
+.about-center a:focus-visible {
+    box-shadow: var(--highlight-sm);
+    outline: none;
+}
+
+/* .about-center h1,
 p {
-    /* margin: 0; */
-}
+    margin: 0;
+} */
 
 .about-center button {
     /* padding: 0 16px; */
     padding: 0 24px;
-    margin: auto;
+    /* margin: auto; */
 }
 
 .something-about {
+    display: flex;
+    flex-direction: column;
     color: var(--white);
     text-align: left;
+    font-size: var(--text-md);
+
+    /* max-height: 20%;
+    overflow: hidden; */
+
+    max-width: 800px;
+
+    gap: 12px;
+
+    line-height: 1.4;
 
 }
 
-.about-sides {
+.something-about p {
+    margin: 0;
+}
+
+.two-columns {
     display: flex;
+    gap: 20px;
 }
 
-.about-sides i {
-    color: var(--green);
-    font-size: 24px;
+.two-columns .something-about:last-of-type {
+    padding-left: 20px;
+    border-left: 2px solid green;
 }
-
 
 .mobile-icons {
     position: relative;
@@ -104,6 +133,7 @@ p {
     /* align-items: flex-end; */
     /* justify-content: center; */
     height: 40px;
+    margin: 10px 0;
 }
 
 
@@ -178,16 +208,21 @@ p {
     }
 
 
-    .about-center {
+
+    /* .about-center {
         width: 60%;
-    }
+    } */
 
 }
 
 @media screen and (max-width: 800px) {
 
     .about-center {
-        width: 80%;
+        width: 70%;
     }
+
+    /* .something-about {
+        background-color: red;
+    } */
 
 }
