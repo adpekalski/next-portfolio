@@ -1,7 +1,16 @@
 /* reused styles */
-.about-me {
-  margin: var(--card-margin) 0;
+.title {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--card-margin) 0;
   color: var(--green);
+
+  font-size: var(--text-xl);
+}
+
+.title h1 {
+  margin: 0;
 }
 
 .btn {
@@ -10,19 +19,27 @@
   line-height: 1.4;
 
   /* width: 220px; */
-  font-size: var(--major-2-md);
 
+  font-size: var(--text-md);
 
+cursor: pointer;
   outline: none;
 
-  height: 48px;
+  height: 40px;
 
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 
+  display: grid;
+  align-items: center;
+
+  padding: 0 24px;
 
   border: 2px solid transparent;
+
+  white-space: nowrap;
+  font-weight: 500;
 }
 
 .primary-btn {
@@ -36,4 +53,27 @@
   color: var(--white);
   /* border-color: var(--green); */
   border-color: var(--sample);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin: 16px 20px;
+
+}
+
+.green-text {
+  color: var(--green);
+}
+
+.white-text {
+  color: var(--white);
+}
+
+
+.btn-spcl {
+
+  /* flex-direction: column; */
+  overflow: hidden;
+
 }
