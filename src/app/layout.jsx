@@ -1,4 +1,4 @@
-import { first } from "./fonts"
+import { first } from "./fonts";
 
 export const metadata = {
   title: 'WebWeaverDev',
