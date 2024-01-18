@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -23,6 +23,7 @@ import Contact from '@/components/contact/Contact';
 import Title from '@/components/title/Title';
 
 import Button from '@/components/button/Button';
+
 
 export default function Page() {
 
@@ -96,10 +97,9 @@ export default function Page() {
         isWarning ?
           <Swiper
             direction={'vertical'}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            mousewheel={true}
+            modules={[Pagination, Mousewheel]}
             className='mainSwiper'
           >
 
