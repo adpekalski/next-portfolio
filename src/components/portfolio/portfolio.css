@@ -47,7 +47,8 @@
     display: flex;
     align-items: center;
     color: var(--green);
-    font-size: 32px;
+    /* font-size: 32px; */
+    font-size: var(--text-xxl);
     gap: 10px;
     margin-top: var(--card-margin);
     /* margin: 24px; */
@@ -86,3 +87,9 @@
 .play-white {
     color: var(--white);
 }
+
+@media screen and (orientation: portrait) {
+    .custom-pagination {
+      display: none;
+    }
+  }
