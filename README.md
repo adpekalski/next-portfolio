@@ -23,6 +23,10 @@ However, in this case, with only personal use in mind, time was a decisive facto
 
 # Upcoming Changes
 
+### Important! 
+- Responsivness based on matchMedia should be changed to typical css media query with *"display: none"*.  
+Currently after resizing window on desktop (as much as to get mobile size) the text for **About me** isn't changing.  
+
 ### Interaction
 - The **Go Back** button currently works based on user search history (not functioning when the website is accessed through a link).
   - This button should be changed to work based on history **OR** bring the user back to the search engine (let's say Google).
