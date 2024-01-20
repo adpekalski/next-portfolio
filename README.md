@@ -48,6 +48,7 @@ Currently after resizing window on desktop (as much as to get mobile size) the t
 - Updates for next projects and current descriptions.
 
 ### Ideas
+- Spam protection for contact form?
 - About me section as a card?
 - Addition of particle effects on the home page?
 - Next page or new content for current pages?
