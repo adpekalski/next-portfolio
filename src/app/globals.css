@@ -13,7 +13,11 @@
   /* --sample: #216259; */
   --sample: #1a4e47;
   --wrong: #4e1a1a;
+
+
   --green: #55fc75;
+  --green-lighter: #87fc9e;
+  --green-darker: #04e72f;
 
 
   /* for responsivness */
@@ -53,7 +57,7 @@
   --text-xl: var(--major-3-xl);
   --text-xxl: var(--major-3-xxl);
 
-  
+
 
 
 }
@@ -107,28 +111,76 @@ body {
   flex-direction: column;
   height: 100%;
 
-
-
-  /* max-width: 80%;
-  margin: auto; */
   width: 400px;
   max-width: 80%;
   margin: auto;
 
 }
 
-.warning-page p {
-  margin: var(--card-margin) 0;
+.warning-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin: 20px auto;
   font-size: var(--text-md);
 }
 
-.warning-page p:first-of-type {
+.warning-text p {
+  margin: 0;
+}
+
+.glitch-text {
+  /* font-size: var(--text-sm); */
+  position: relative;
+  text-transform: uppercase;
+  /* color: black; */
+  font-weight: 500;
+  margin: 20 0;
+}
+
+.glitch-text span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.glitch-top {
+
+  /* clip-path: polygon(0 68%, 100% 55%, 100% 0, 0 0); */
+  /* clip-path: polygon(0 0, 100% 0, 100% 34%, 0 47%); */
+  clip-path: polygon(0 0, 100% 0, 100% 34%, 0 51%);
+  /* color: yellow; */
+}
+
+.glitch-middle {
+  /* clip-path: polygon(0 68%, 100% 55%, 100% 34%, 0 47%); */
+  clip-path: polygon(0 54%, 100% 32%, 100% 49%, 0 64%);
+  /* color: red; */
+}
+
+.glitch-bottom {
+
+  /* clip-path: polygon(0 68%, 100% 55%, 100% 100%, 0 100%); */
+  clip-path: polygon(0 100%, 100% 100%, 100% 49%, 0 64%);
+  /* color: blue; */
+}
+
+/* .warning-page p {
+  align-items: flex-start;
+  margin: var(--card-margin) 0;
+  margin: 0 auto;
+
+} */
+
+/* .warning-page p:first-of-type {
   margin-bottom: 12px;
 }
 
 .warning-page p:last-of-type {
   margin-top: 0;
-}
+} */
 
 .warning-page .title {
   font-size: 20px;
@@ -249,7 +301,7 @@ body {
   /* z-index: -10; */
   /* right: 20px; */
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   /* background: #888;  */

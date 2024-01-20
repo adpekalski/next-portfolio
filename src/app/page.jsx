@@ -10,6 +10,9 @@ import 'swiper/css/pagination';
 import './globals.css';
 import "@/components/ultimate.css";
 
+import { motion } from 'framer-motion';
+import { second } from './fonts';
+
 import { warningPage } from '@/data/WebsiteData';
 
 import Home from '@/components/home/Home';
@@ -72,8 +75,74 @@ export default function Page() {
           :
           <div className={`warning-page ${noDisplay}`}>
             <Title solid={true}>Epilepsy warning</Title>
-            <p className='white-text'>{warningPage.warningText[1]}</p>
-            <p className='white-text'>{warningPage.warningText[2]}</p>
+            <div className='warning-text'>
+              <p className='white-text'>{warningPage.warningText[1]}</p>
+              <p className='white-text'>{warningPage.warningText[2]}</p>
+              
+            </div>
+            <motion.p
+                className={second.className + ' green-text glitch-text'}
+              // className='glitch-text'
+              >
+                <motion.span
+                  aria-hidden={true}
+                  className='glitch-top'
+                  animate={{
+                    x: [-1, 1],
+                    // color: ["#55fc75", "#02a522"],
+                    // color: ["#55fc75", "#87fc9e"],
+                    // color: ["#55fc75", "#02a522"],
+                    transition: {
+                      duration: 0.01,
+                      repeatDelay: 0.6,
+                      // duration: 0.05,
+                      // repeatDelay: 0.7,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "anticipate"
+                    }
+                  }}
+                >
+                  {warningPage.warningText[3]}
+                </motion.span>
+                <motion.span
+                  aria-hidden={true}
+                  className='glitch-middle'
+                  animate={{
+                    x: [1, -1],
+                    // color: ["#55fc75", "#02a522"],
+                    transition: {
+                      duration: 0.15,
+                      repeatDelay: 0.5,
+                      // duration: 0.05,
+                      // repeatDelay: 0.7,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "anticipate"
+                    }
+                  }}
+                >
+                  {warningPage.warningText[3]}
+                </motion.span>
+                {warningPage.warningText[3]}
+                <motion.span
+                  aria-hidden={true}
+                  className='glitch-bottom'
+                  animate={{
+                    x: [-1, 1],
+                    // color: ["#55fc75", "#02a522"],
+                    transition: {
+                      duration: 0.05,
+                      repeatDelay: 0.7,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "anticipate"
+                    }
+                  }}
+                >
+                  {warningPage.warningText[3]}
+                </motion.span>
+              </motion.p>
             <div className='warning-buttons'>
               <Button
                 style="secondary"

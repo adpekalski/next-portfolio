@@ -57,5 +57,6 @@ export const warningPage = {
     warningText: {
         1: "This website contains flashing animations and bright colors which may not be suitable for people with photosensitivity.",
         2: "Remember to consult with your ripperdoc before entering this site, and proceed at your own discretion.",
+        3: "Nah, you should be fine choom!"
     },
 }
