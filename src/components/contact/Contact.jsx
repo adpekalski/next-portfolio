@@ -16,7 +16,7 @@ const Contact = () => {
         e.preventDefault();
         setVisibility(true);
 
-        emailjs.sendForm('service_ttmmwda', 'template_vwj89gi', form.current, 'Ae9_zqRZKzMwltn9s')
+        emailjs.sendForm('service_ttmmwda', 'template_vwj89gi', formRef.current, 'Ae9_zqRZKzMwltn9s')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
