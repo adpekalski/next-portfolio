@@ -5,13 +5,6 @@ import { motion, useAnimationControls } from 'framer-motion';
 import { second } from '@/app/fonts';
 import './button.css';
 
-// import { projectsData } from '@/data/ProjectsData';
-
-// import test from '../../../public/avatar.png';
-
-
-
-
 const Button = (props) => {
     const {
         children,
@@ -27,59 +20,31 @@ const Button = (props) => {
     const controls = useAnimationControls();
 
     const button = {
-        // solid: {
-        //     opacity: 1
-        // },
-        // move: {
-        //     // opacity: 1.1,
-        //     transition: {
-        //         delayChildren: 0.01,
-        //         staggerChildren: 0.1,
-        //         ease: "linear",
-        //         duration: 0.1
-        //     },
-
-        // }
+        // place for button animations
     }
 
     const oldLetters = {
         solid: {
-            // visibility: "show"
             y: 0
         },
         move: index => ({
-            // visibility: "show",
             y: -20,
-            transition: {
-                delay: index * 0.05
-            },
-            transitionEnd: {
-                y: 0
-            }
+            transition: { delay: index * 0.05 },
+            transitionEnd: { y: 0 }
 
         })
     }
 
     const newLetters = {
         solid: {
-            // visibility: "hidden",
             y: 20
         },
         move: index => ({
-            // visibility: "show",
             y: 0,
-            transition: {
-                delay: index * 0.05
-            },
-            transitionEnd: {
-                y: 20
-            }
+            transition: { delay: index * 0.05 },
+            transitionEnd: { y: 20 }
         })
     }
-
-    // const onClickFull = () => { 
-
-    // }
 
     return (
         <motion.button
@@ -95,41 +60,33 @@ const Button = (props) => {
             animate={controls}
         >
             <div className='flex-letters'>
-                {
+                {text.map((char, index) => (
 
-                    text.map((char, index) => (
+                    <motion.span
+                        key={index}
+                        className={second.className}
+                        variants={oldLetters}
+                        custom={index}
 
-                        <motion.span
-                            key={index}
-                            className={second.className}
-                            variants={oldLetters}
-                            custom={index}
-
-                        >
-                            {char === " " ? "\u00A0" : char}
-                        </motion.span>
-                    ))
-                }
+                    >
+                        {char === " " ? "\u00A0" : char}
+                    </motion.span>
+                ))}
             </div>
-            {/* <div className='animated-letters'> */}
             <div className='flex-letters'>
-                {
+                {text.map((char, index) => (
 
-                    text.map((char, index) => (
+                    <motion.span
+                        key={index}
+                        className={second.className}
+                        variants={newLetters}
+                        custom={index}
 
-                        <motion.span
-                            key={index}
-                            className={second.className}
-                            variants={newLetters}
-                            custom={index}
-
-                        >
-                            {char === " " ? "\u00A0" : char}
-                        </motion.span>
-                    ))
-                }
+                    >
+                        {char === " " ? "\u00A0" : char}
+                    </motion.span>
+                ))}
             </div>
-            {/* </div> */}
 
         </motion.button>
     );
