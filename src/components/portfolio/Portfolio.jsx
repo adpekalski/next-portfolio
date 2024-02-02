@@ -49,34 +49,11 @@ const Portfolio = (props) => {
         )
     }
 
-    // Object.entries(projectsData.projectImg).forEach((item, index) => {
-    //     pagination.push(
-    //         <p
-    //             key={"swipe" + index}
-    //             className={activeSlide === index ? "swipe-active" : "swipe"}
-    //             onClick={() => {
-    //                 swiperRef.current.swiper.slideTo(index);
-    //             }}
-    //         >
-    //             {index}
-    //         </p>
-    //     )
-    // })
-
     return (
         <section className='portfolio' id='portfolio'>
 
             <motion.div
                 className='card-container'
-                // initial={{
-                //     y: 200
-                // }}
-                // whileInView={{
-                //     y: 0
-                // }}
-                // transition={{
-                //     duration: 5
-                // }}
             >
                 <Swiper
                     ref={swiperRef}
@@ -84,25 +61,10 @@ const Portfolio = (props) => {
                         const { activeIndex } = swiperCore;
                         setActiveSlide(activeIndex);
                     }}
-
-                    // direction={'horizontal'}
                     breakpoints={{
-                        540: {
-                            slidesPerView: 1,
-                            // spaceBetween: 30,
-                        },
-                        // 768: {
-                        //     slidesPerView: 2,
-                        // },
-                        1200: {
-                            slidesPerView: 2,
-                            // spaceBetween: 40,
-                        },
+                        540: { slidesPerView: 1, },
+                        1200: { slidesPerView: 2, },
                     }}
-                    // !!! if two rows needed
-                    // grid={{
-                    //     rows: 2,
-                    // }}
                     pagination={{
                         clickable: true,
                     }}
@@ -132,7 +94,6 @@ const Portfolio = (props) => {
                         null
                 }
             </motion.div>
-
 
         </section>
     );
