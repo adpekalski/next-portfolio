@@ -1,11 +1,9 @@
 .portfolio {
     height: 100vh;
     width: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .card-container {
@@ -13,46 +11,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    /* background-color: grey; */
-
-    /* maybe only on mobile */
-    /* border: solid var(--green); */
-    /* border-width: 1px 0 1px 0; */
-    /* border-radius: 15px; */
-
-    /* height: 600px;
-    width: var(--card-size); */
-
-    /* !!! this one is most important to be responsive one */
-    /* height: fit-content; */
-    /* !!! change to less in case of bigger devices (lets say 70) */
-    /* and make card margin bigger and  */
     max-height: 90vh;
     margin-bottom: 20px;
-    /* height: 90%; */
     width: 90%;
-
     margin: auto;
-
-    /* !!!!!!! */
-    /* overflow: hidden; */
-
-
-
-
 }
 
 .custom-pagination {
     display: flex;
     align-items: center;
     color: var(--green);
-    /* font-size: 32px; */
     font-size: var(--text-xxl);
     gap: 10px;
     margin-top: var(--card-margin);
-    /* margin: 24px; */
-    /* width: 100%; */
     justify-content: space-between;
 }
 
@@ -61,14 +32,11 @@
 }
 
 .custom-pagination > *:first-child {
-    /* color: aliceblue; */
     rotate: 180deg;
     margin-right: 20px;
 }
 
 .custom-pagination > *:last-child {
-    /* color: aliceblue; */
-    /* rotate: 180deg; */
     margin-left: 20px;
 }
 
