@@ -2,13 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
-import test from '$/avatar.png';
 import './card.css';
 
 import { projectsData } from '@/data/WebsiteData';
-
-// import test from '../../../public/avatar.png';
-
 
 const Card = (props) => {
     const { whichOne } = props;
