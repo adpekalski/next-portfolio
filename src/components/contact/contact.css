@@ -4,9 +4,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* background-color: antiquewhite; */
-
     box-sizing: border-box;
 }
 
@@ -15,25 +12,12 @@
     color: var(--green);
 }
 
-/* !!! for now not needed */
 .contact-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
-
-    /* height: 90%;
-    width: 90%; */
-
-    /* background-color: #0c0905; */
-    /* background-color: aliceblue; */
 }
 
-.contact-form {
-    /* background-color: #0c0905; */
-}
-
-/* .contact-form, */
 .input-group label,
 .input-group input,
 .input-group textarea {
@@ -46,7 +30,6 @@
     color: var(--white);
 }
 
-
 .input-group,
 .input-group label,
 .input-group input,
@@ -57,7 +40,6 @@
 .contact-form {
     display: flex;
     flex-direction: column;
-    /* padding: var(--card-margin) 0; */
 }
 
 .contact-form p {
@@ -67,7 +49,6 @@
 
 .user-data {
     display: flex;
-    /* change to row in bigger devices */
     flex-direction: column;
 }
 
@@ -76,9 +57,7 @@
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    /* border: 2px solid var(--green); */
     border: 2px solid var(--sample);
-
     margin: 16px 20px;
 }
 
@@ -89,9 +68,7 @@
     top: -10px;
     left: 20px;
     padding: 0 5px;
-
     color: var(--green);
-
 }
 
 .input-group input {
@@ -101,30 +78,17 @@
 .input-group input,
 .input-group textarea {
     width: 100%;
-
     padding: 8px 12px;
-
     border: none;
-
 }
-
-/* .input-group textarea {
-    padding: 0;
-    width: 100%;
-} */
 
 .input-group input,
 .input-group textarea {
     line-height: 1.4;
-
-    /* width: 220px; */
     font-size: var(--text-md);
-
-
     outline: none;
 }
 
-/* !!! main width */
 .credentials,
 .message,
 .contact-buttons {
@@ -134,9 +98,7 @@
 .input-group textarea {
     border: none;
     resize: none;
-    /* min-height: 160px; */
     height: 160px;
-    /* max-height: 80%; */
     padding: 14px 12px;
     display: flex;
     flex-direction: column;
@@ -144,20 +106,16 @@
     align-items: center;
 }
 
-/* . */
-
 .contact-buttons {
     display: flex;
     justify-content: space-between;
     margin: 16px 20px;
-
 }
 
 .contact-buttons button {
     width: 45%;
 }
 
-/* global? */
 input:focus {
     box-shadow: var(--highlight-sm);
 }
@@ -173,7 +131,6 @@ button:focus {
 @media screen and (min-width: 1280px) {
     .user-data {
         display: flex;
-        /* change to row in bigger devices */
         flex-direction: row;
         justify-content: space-between;
     }
@@ -185,20 +142,15 @@ button:focus {
     .contact-buttons {
         justify-content: space-between;
         width: 640px;
-        /* gap: 40px; */
     }
 
     .contact-form .contact-buttons button {
         width: 300px;
-    }
-    
+    }    
 }
 
 @media screen and (min-height: 800px) {
-
     .input-group textarea {
-
         height: 240px;
-    }
-    
+    }    
 }
