@@ -1,13 +1,8 @@
 import React from 'react';
+import Marquee from 'react-fast-marquee';
 
 import './about.css';
 import '@/components/ultimate.css';
-import { second } from '@/app/fonts';
-// import CV from '$/CV.pdf';
-
-import { motion } from 'framer-motion';
-
-import Marquee from 'react-fast-marquee';
 
 import { aboutContent } from '@/data/WebsiteData';
 import Button from '../button/Button';
@@ -15,8 +10,6 @@ import Title from '../title/Title';
 
 const About = (props) => {
     const { minDeviceForMoreText, minDeviceForSplit } = props;
-
-
 
     return (
         <section className='about' id='about' tabIndex={0}>
@@ -70,16 +63,7 @@ const About = (props) => {
                         <Button style="primary">
                             Download CV
                         </Button>
-                        {/* <motion.button
-                            tabIndex={-1}
-                            type='button'
-                            className='btn-download primary-btn btn'
-
-                        >
-                            <span>Download CV</span>
-                        </motion.button> */}
                     </a>
-
 
                 </div>
 
