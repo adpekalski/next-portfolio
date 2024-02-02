@@ -5,13 +5,6 @@ import { motion } from 'framer-motion';
 import { second } from '@/app/fonts';
 import './title.css';
 
-// import { projectsData } from '@/data/ProjectsData';
-
-// import test from '../../../public/avatar.png';
-
-
-
-
 const Title = (props) => {
     const { children, solid } = props;
 
@@ -22,7 +15,6 @@ const Title = (props) => {
         show: {
             opacity: 1,
             transition: {
-                // delay: 1,
                 delayChildren: 0.01,
                 staggerChildren: 0.1
             }
