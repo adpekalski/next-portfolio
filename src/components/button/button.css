@@ -1,18 +1,10 @@
-/* .animated-letters {
-    position: absolute;
-    display: flex;
-} */
-
 .flex-letters {
     display: flex;
     height: fit-content;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    /* position: absolute; */
     overflow: hidden;
-
-
     grid-column: 1;
     grid-row: 1;
 }
