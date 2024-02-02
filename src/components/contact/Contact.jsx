@@ -61,7 +61,6 @@ const Contact = () => {
                         <textarea
                             ref={textRef}
                             name="message"
-                            // value=""
                             rows="1"
                             onFocus={(e) => { setFocus(e.target.name) }}
                             onBlur={() => { setFocus(null) }}
