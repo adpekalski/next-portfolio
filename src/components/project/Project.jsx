@@ -1,13 +1,10 @@
 import React from 'react';
 
-import { second } from '@/app/fonts';
 import './project.css';
 
 import { projectsData } from '@/data/WebsiteData';
 import Title from '../title/Title';
 import Card from '../card/Card';
-
-
 
 const Project = (props) => {
     const { which, minHeight } = props;
@@ -28,7 +25,6 @@ const Project = (props) => {
             </>
         );
         choosenCard = hidden ? null : <Card whichOne={which}></Card>;
-
     }
     return (
         <div className='project'>
@@ -41,11 +37,12 @@ const Project = (props) => {
                 }}
             >
                 {currentProject}
-
             </p>
-            {hidden ? <p style={{ textAlign: "center" }} className="green-text">More text icoming </p> : null
-}
-        </div >
+            {hidden ?
+                <p style={{ textAlign: "center" }} className="green-text">More text icoming </p>
+                : null
+            }
+        </div>
     );
 };
 
