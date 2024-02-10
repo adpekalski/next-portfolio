@@ -29,15 +29,18 @@
 
 .custom-pagination p {
     margin: 0;
+    cursor: pointer;
 }
 
 .custom-pagination > *:first-child {
     rotate: 180deg;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .custom-pagination > *:last-child {
     margin-left: 20px;
+    cursor: pointer;
 }
 
 .swipe {
@@ -48,12 +51,12 @@
     color: var(--green);
 }
 
-.play-green {
-    color: var(--green);
-}
-
 .play-white {
     color: var(--white);
+}
+
+.play-white:hover {
+    color: var(--green);
 }
 
 @media screen and (orientation: portrait) {

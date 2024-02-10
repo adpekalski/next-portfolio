@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 
-import { motion } from 'framer-motion';
+import { motion, useAnimationControls } from 'framer-motion';
 
 import './portfolio.css';
 
@@ -19,11 +19,27 @@ const Portfolio = (props) => {
     const { minHeight } = props;
 
     const numberOfProjects = Object.entries(projectsData.projectImg).length;
-    const numberOfBullets = numberOfProjects - 1;
+    const [numberOfBullets, setNumberOfBullets] = React.useState(0);
+
     const swiperRef = React.useRef(null);
     const [activeSlide, setActiveSlide] = React.useState(0);
+
     const slides = [];
     const pagination = [];
+
+    const controls = useAnimationControls();
+
+    const shakeElement = {
+        solid: {
+            y: 0,
+            x: 0
+        },
+        shake: {
+            y: [0, 2, 0, -2, 0],
+            x: [0, -2, 0, 2, 0],
+            transition: { duration: 0.2 }
+        }
+    }
 
     for (let i = 0; i < numberOfProjects; i++) {
         slides.push(
@@ -35,13 +51,19 @@ const Portfolio = (props) => {
         )
     }
 
+    React.useEffect(() => {
+        const bulletsNeeded = swiperRef.current.swiper.pagination.bullets.length;
+        setNumberOfBullets(bulletsNeeded);
+    })
+
     for (let i = 0; i < numberOfBullets; i++) {
         pagination.push(
             <p
                 key={"bullet" + i}
                 className={activeSlide === i ? "swipe-active" : "swipe"}
                 onClick={() => {
-                    swiperRef.current.swiper.slideTo(i);
+                    swiperRef.current.swiper.slideToLoop(i);
+                    controls.start("shake");
                 }}
             >
                 {i}
@@ -51,19 +73,18 @@ const Portfolio = (props) => {
 
     return (
         <section className='portfolio' id='portfolio'>
-
-            <motion.div
-                className='card-container'
-            >
+            <div className='card-container'>
                 <Swiper
                     ref={swiperRef}
+                    loop={true}
                     onSlideChange={(swiperCore) => {
-                        const { activeIndex } = swiperCore;
-                        setActiveSlide(activeIndex);
+                        const { realIndex } = swiperCore;
+                        setActiveSlide(realIndex);
                     }}
                     breakpoints={{
                         540: { slidesPerView: 1, },
                         1200: { slidesPerView: 2, },
+                        1600: { slidesPerView: 3, },
                     }}
                     pagination={{
                         clickable: true,
@@ -73,28 +94,33 @@ const Portfolio = (props) => {
                 >
                     {slides}
                 </Swiper>
-                {
-                    numberOfProjects > 2 ?
-                        <div className='custom-pagination'>
-                            <Play
-                                className={activeSlide !== 0 ? "play-green" : "play-white"}
-                                onClick={() => {
-                                    swiperRef.current.swiper.slidePrev();
-                                }}
-                            />
-                            {pagination}
-                            <Play
-                                className={(activeSlide + 1) !== numberOfBullets ? "play-green" : "play-white"}
-                                onClick={() => {
-                                    swiperRef.current.swiper.slideNext();
-                                }}
-                            />
-                        </div>
-                        :
-                        null
+                {numberOfProjects > 2 ?
+                    <motion.div
+                        className='custom-pagination'
+                        variants={shakeElement}
+                        initial="solid"
+                        animate={controls}
+                    >
+                        <Play
+                            className='play-white'
+                            onClick={() => {
+                                swiperRef.current.swiper.slidePrev();
+                                controls.start("shake");
+                            }}
+                        />
+                        {pagination}
+                        <Play
+                            className='play-white'
+                            onClick={() => {
+                                swiperRef.current.swiper.slideNext();
+                                controls.start("shake");
+                            }}
+                        />
+                    </motion.div>
+                    :
+                    null
                 }
-            </motion.div>
-
+            </div>
         </section>
     );
 };
