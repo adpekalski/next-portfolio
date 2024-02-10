@@ -3,12 +3,19 @@
     justify-content: center;
     align-items: center;
     margin: var(--card-margin);
-    border-radius: 10%;
+    border-radius: 15px;
     flex-shrink: 0;
     height: calc(var(--card-size) - (2 *(var(--card-margin))));
     width: calc(var(--card-size) - (2 *(var(--card-margin))));
+    /* height: 400px;
+    width: 400px; */
     overflow: hidden;
     box-shadow: var(--highlight-sm);
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: var(--highlight-md);
 }
 
 .card a {
@@ -19,6 +26,7 @@
 }
 
 .card-image {
-    height: 110%;
-    width: 110%;
+    height: 92%;
+    width: 92%;
+    border-radius: 10px;
 }

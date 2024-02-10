@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import './card.css';
 
+import { motion } from 'framer-motion';
 import { projectsData } from '@/data/WebsiteData';
 
 const Card = (props) => {
@@ -12,7 +13,10 @@ const Card = (props) => {
     const projectLink = projectsData.linkToProject[whichOne];
 
     return (
-        <div className='card'>
+        <motion.div
+            className='card'
+
+        >
             {projectLink === "" || projectLink === undefined ?
                 <Image
                     className='card-image'
@@ -28,7 +32,7 @@ const Card = (props) => {
                     />
                 </a>
             }
-        </div>
+        </motion.div>
     );
 };
 
