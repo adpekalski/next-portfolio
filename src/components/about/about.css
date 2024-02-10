@@ -66,7 +66,7 @@
 
 .two-columns .something-about:last-of-type {
     padding-left: 20px;
-    border-left: 2px solid green;
+    border-left: 2px solid var(--green);
 }
 
 .mobile-icons {
