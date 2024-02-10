@@ -4,6 +4,7 @@
     justify-content: flex-start;
     align-items: center;
     height: 100%;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -33,18 +34,6 @@
     text-wrap: nowrap;
 }
 
-.read-more {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    width: fit-content;
-}
-
-.read-more--icon {
-    width: 16px;
-}
-
-.expand-text {
-    color: var(--green);
-    white-space: nowrap;
+.more-text {
+    cursor: pointer;
 }

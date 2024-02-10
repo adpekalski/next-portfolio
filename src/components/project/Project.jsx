@@ -19,7 +19,13 @@ const Project = (props) => {
             <>
                 {hidden ? projectsData.description[which] + " " : projectsData.shortDescription[which] + " "}
 
-                <span className='green-text'>{showMoreOrLess}</span>
+                <span className='more-text green-text'
+                    onClick={() => {
+                        setHidden(prev => !prev);
+                    }}
+                >
+                    {showMoreOrLess}
+                </span>
 
 
             </>
@@ -30,12 +36,7 @@ const Project = (props) => {
         <div className='project'>
             <Title>{projectsData.projectName[which]}</Title>
             {choosenCard}
-            <p
-                className='project--desc'
-                onClick={() => {
-                    setHidden(prev => !prev);
-                }}
-            >
+            <p className='project--desc'>
                 {currentProject}
             </p>
             {hidden ?
