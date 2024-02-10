@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import avatar from '$/avatar.png';
-import logo from '$/logo_ww.png';
+import logo from '$/logo_all_green.png';
 import './home.css';
 
 import { motion } from 'framer-motion';
