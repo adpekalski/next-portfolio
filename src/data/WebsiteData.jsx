@@ -1,38 +1,43 @@
-import firstProjectScreen from "$/portfolio.png";
-import secondProjectScreen from "$/coming_soon.png";
-import thirdProjectScreen from "$/coming_soon.png";
-import fourthProjectScreen from "$/coming_soon.png";
+import portfolioImg from "$/portfolio.png";
+import storybookDocImg from "$/storybook_doc.png";
+import sejmStreamImg from "$/sejm_stream.png";
+import placeholderImg from "$/coming_soon.png";
 
 export const projectsData = {
     projectImg: {
-        1: firstProjectScreen,
-        2: secondProjectScreen,
-        3: thirdProjectScreen,
-        4: fourthProjectScreen
+        1: storybookDocImg,
+        2: sejmStreamImg,
+        4: placeholderImg,
+        5: placeholderImg,
+        3: portfolioImg,
     },
     projectName: {
-        1: "Portfolio",
-        2: "Library",
-        3: "Brain Stretch",
-        4: "E-Commerce"
+        1: "Library",
+        2: "SejmStream",
+        4: "Brain Stretch",
+        5: "E-Commerce",
+        3: "Portfolio",
     },
     description: {
-        1: "Portfolio site presenting my projects with engaging animations and a unique style that resonates with my personality. Constructed with Next.js and powered by Framer Motion. Crafted using Swiper, EmailJS, Feather Icons and React Fast Marquee. Incorporating a fully functional contact form equipped with validation.",
-        2: "My own React component library, infused with animations and crafted using Storybook.",
-        3: 'Web application allowing users to play cognitively engaging and "brain stretching" games.',
-        4: "Showcase website representing a company, complete with integrated e-commerce capabilities."
+        1: "My own React component library, infused with animations and crafted using Storybook. Available as an npm package. Based on Typescript.",
+        2: "Live streaming platform showcasing sessions from the Polish Parliament. New version is currently being developed by a three-member team.",
+        4: 'Web application allowing users to play cognitively engaging and "brain stretching" games.',
+        5: "Showcase website representing a company, complete with integrated e-commerce capabilities.",
+        3: "Portfolio site presenting my projects with engaging animations and a unique style that resonates with my personality. Constructed with Next.js and powered by Framer Motion. Crafted using Swiper, EmailJS, Feather Icons and React Fast Marquee. Incorporating a fully functional contact form equipped with validation.",
     },
     shortDescription: {
-        1: "Portfolio site presenting my projects with engaging animations and a unique style that resonates with my personality.",
-        2: "My own React component library, infused with animations and crafted using Storybook.",
-        3: 'Web application allowing users to play cognitively engaging and "brain stretching" games.',
-        4: "Showcase website representing a company, complete with integrated e-commerce capabilities."
+        1: "My own React component library, infused with animations and crafted using Storybook. Available as an npm package.",
+        2: "Live streaming platform showcasing sessions from the Polish Parliament. New version is currently being developed by a three-member team.",
+        4: 'Web application allowing users to play cognitively engaging and "brain stretching" games.',
+        5: "Showcase website representing a company, complete with integrated e-commerce capabilities.",
+        3: "Portfolio site presenting my projects with engaging animations and a unique style that resonates with my personality.",
     },
     linkToProject: {
-        1: "https://github.com/adpekalski/next-portfolio",
-        2: "",
-        3: "",
-        4: ""
+        1: "https://github.com/adpekalski/preem-ui",
+        2: "https://sejm.stream",
+        4: "",
+        5: "",
+        3: "https://github.com/adpekalski/next-portfolio",
     }
 };
 
