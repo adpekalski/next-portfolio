@@ -20,7 +20,15 @@ const Button = (props) => {
     const controls = useAnimationControls();
 
     const button = {
-        // place for button animations
+        solid: {
+            y: 0,
+            x: 0
+        },
+        move: {
+            y: [0, 2, 0, -2, 0],
+            x: [0, -2, 0, 2, 0],
+            transition: { duration: 0.2 }
+        }
     }
 
     const oldLetters = {
@@ -52,6 +60,7 @@ const Button = (props) => {
             type={type}
             value={value}
             variants={button}
+            // also on enter
             onClick={() => {
                 controls.start("move");
                 onClick !== undefined ? onClick() : null;
@@ -67,7 +76,6 @@ const Button = (props) => {
                         className={second.className}
                         variants={oldLetters}
                         custom={index}
-
                     >
                         {char === " " ? "\u00A0" : char}
                     </motion.span>
@@ -81,7 +89,6 @@ const Button = (props) => {
                         className={second.className}
                         variants={newLetters}
                         custom={index}
-
                     >
                         {char === " " ? "\u00A0" : char}
                     </motion.span>
