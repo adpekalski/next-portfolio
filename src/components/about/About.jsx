@@ -57,7 +57,7 @@ const About = (props) => {
 
                     <a
                         className='download-anchor'
-                        href='/Pękalski_Adrian_CV.pdf'
+                        href='/Pekalski_Adrian_CV.pdf'
                         download
                     >
                         <Button style="primary">
