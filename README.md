@@ -43,6 +43,8 @@ Currently after resizing window on desktop (as much as to get mobile size) the t
 ### Code
 - Cleanup for DRYness.
 - Further componentization.
+- Test and switch to TypeSrcipt for more "upToDate" requirements.
+- Further SEO optimization - Next.js should be only minimum
 
 ### Content
 - Updates for next projects and current descriptions.
