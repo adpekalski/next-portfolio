@@ -43,8 +43,8 @@ Currently after resizing window on desktop (as much as to get mobile size) the t
 ### Code
 - Cleanup for DRYness.
 - Further componentization.
-- Test and switch to TypeSrcipt for more "upToDate" requirements.
-- Further SEO optimization - Next.js should be only minimum
+- Addition of tests and switching to TypeSrcipt for more "upToDate" requirements.
+- Further SEO optimization - Next.js should be only minimum.
 
 ### Content
 - Updates for next projects and current descriptions.
@@ -55,21 +55,3 @@ Currently after resizing window on desktop (as much as to get mobile size) the t
 - Addition of particle effects on the home page?
 - Next page or new content for current pages?
 - Filter single characters at the end of line in texts and move to next one? 
-  
-# How to run this code on your device
-
-### Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
